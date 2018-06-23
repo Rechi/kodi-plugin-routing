@@ -8,6 +8,7 @@ Library for building and parsing URLs in [Kodi](http://kodi.tv) plugins.
 
 ```python
 import routing
+import sys
 from xbmcgui import ListItem
 from xbmcplugin import addDirectoryItem, endOfDirectory
 
@@ -25,7 +26,7 @@ def show_category(category_id):
     endOfDirectory(plugin.handle)
 
 if __name__ == '__main__':
-    plugin.run()
+    plugin.run(sys.argv)
 ```
 
 
