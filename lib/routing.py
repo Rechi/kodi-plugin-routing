@@ -108,7 +108,9 @@ class Plugin(object):
             self._rules[func] = []
         self._rules[func].append(rule)
 
-    def run(self, argv=sys.argv):
+    def run(self, argv=None):
+        if argv == None:
+            argv = sys.argv
         if len(argv) > 2:
             self.args = parse_qs(argv[2].lstrip('?'))
         path = urlsplit(argv[0]).path or '/'
